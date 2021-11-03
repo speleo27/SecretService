@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgentsTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateAgentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('agents', function (Blueprint $table) {
-            $table->uuid("id")->primary();
-            $table->string("agent_firstname");
-            $table->string("agent_lastname");
-            $table->dateTime("agent_birthday");
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->id();
+            $table->string("contact_firstname");
+            $table->string("contact_lastname");
+            $table->dateTime("contact_birthday");
             $table->foreignId("nationality_id");
-
+            $table->string("contact_pseudo");
         });
     }
 
@@ -30,6 +30,6 @@ class CreateAgentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agents');
+        Schema::dropIfExists('contacts');
     }
 }
