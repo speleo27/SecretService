@@ -7,7 +7,7 @@ BEGIN
 CREATE TABLE agent (
                        uuid varchar(255) PRIMARY KEY NOT NULL ,
                        agent_firstname varchar(255),
-                       agent_lastname varchar(255),
+                       agent_lastname   varchar(255),
                        agent_birthday datetime,
                        agent_nationality_id int,
                        specialities_id int

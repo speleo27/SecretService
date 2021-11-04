@@ -18,8 +18,7 @@ class CreateAgentsTable extends Migration
             $table->string("agent_firstname");
             $table->string("agent_lastname");
             $table->dateTime("agent_birthday");
-            $table->foreignId("nationality_id");
-
+            $table->foreignId("nationality_id")->constrained();
         });
     }
 

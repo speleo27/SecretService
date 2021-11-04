@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agent extends Model
 {
+    public $timestamps=false;
     use HasFactory;
     public function nationality()
     {
-        return $this->hasOne(Nationality::class);
+        return $this->belongsTo(Nationality::class);
     }
     public function specialities()
     {

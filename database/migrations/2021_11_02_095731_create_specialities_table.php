@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgentSpecialitiesTable extends Migration
+class CreateSpecialitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateAgentSpecialitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('agent_specialities', function (Blueprint $table) {
+        Schema::create('specialities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("uuid");
-            $table->foreignId("specialities_id");
+            $table->string('speciality_name');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateAgentSpecialitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agent_specialities');
+        Schema::dropIfExists('specialities');
     }
 }
