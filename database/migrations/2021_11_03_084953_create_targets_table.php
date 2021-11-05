@@ -20,7 +20,7 @@ class CreateTargetsTable extends Migration
             $table->dateTime("target_birthday");
             $table->foreignId("nationality_id")->constrained();
             $table->string("target_pseudo");
-            $table->foreignId("missions_id")->constrained();
+
         });
     }
 
