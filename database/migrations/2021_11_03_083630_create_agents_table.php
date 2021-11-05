@@ -14,11 +14,13 @@ class CreateAgentsTable extends Migration
     public function up()
     {
         Schema::create('agents', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->id();
+            $table->Uuid("agent_immat");
             $table->string("agent_firstname");
             $table->string("agent_lastname");
             $table->dateTime("agent_birthday");
             $table->foreignId("nationality_id")->constrained();
+
         });
     }
 

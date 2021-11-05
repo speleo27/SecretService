@@ -13,8 +13,10 @@ class SafeHouseFactory extends Factory
      */
     public function definition()
     {
+        $country=Country::select()->inRandomOrder()->first();
         return [
-            //
+            'safeHouse_address' =>$this->faker->streetAddress(),
+            'country_id'=>$country
         ];
     }
 }

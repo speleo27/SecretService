@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //insert data into table country
         DB::table('countries')->delete();
 
         $countries = array(
@@ -262,6 +263,8 @@ class DatabaseSeeder extends Seeder
         );
 
         DB::table('countries')->insert($countries);
+
+        // insert data into table nationalities
         DB::table('Nationalities')->delete();
 
         $nationals = array(
@@ -463,7 +466,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('nationalities')->insert($nationals);
 
-
+        // insert data for table specialities
         DB::table('Specialities')->delete();
         $specialities = array(
             array('speciality_name' => 'tireur d\'élite'),
@@ -478,6 +481,18 @@ class DatabaseSeeder extends Seeder
             array('speciality_name' => 'piratage'),
         );
         DB::table('Specialities')->insert($specialities);
+
+
+        // insert data into table  status
+        DB::table('Specialities')->delete();
+        $status = array(
+            array('status_name' => 'En preparation'),
+            array('status_name' => 'Attribuée'),
+            array('status_name' => 'En cour'),
+            array('speciality_name' => 'Terminée'),
+
+        );
+        DB::table('Statuses')->insert($status);
 
         \App\Models\User::factory(10)->create();
         \App\Models\Agent::factory(100)->create();

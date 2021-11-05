@@ -14,7 +14,11 @@ class TargetFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'target_firstname' =>$this->faker->firstName(),
+            'target_lastname' =>$this->faker->lastName(),
+            'target_birthday'=>$this->faker->dateTimeBetween('-80 years','-20 years'),
+            'nationality_id' =>$this->faker->numberBetween(1,193),
+            'target_pseudo'=>$this->faker->sentence(2)
         ];
     }
 }

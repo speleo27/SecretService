@@ -15,7 +15,7 @@ class Agent extends Model
     }
     public function specialities()
     {
-        return $this->hasMany(AgentSpecialities::class);
+        return $this->belongsToMany(Speciality::class, 'agent_specialities');
 
     }
 }

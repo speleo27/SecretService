@@ -9,4 +9,7 @@ class Speciality extends Model
 {
     public $timestamps=false;
     use HasFactory;
+    public function agents(){
+        return $this->belongsToMany(Agent::class,"agent_specialities");
+    }
 }

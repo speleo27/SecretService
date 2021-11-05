@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->string("contact_firstname");
             $table->string("contact_lastname");
             $table->dateTime("contact_birthday");
-            $table->foreignId("nationality_id");
+            $table->foreignId("nationality_id")->constrained();
             $table->string("contact_pseudo");
         });
     }

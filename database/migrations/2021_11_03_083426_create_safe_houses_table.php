@@ -16,7 +16,7 @@ class CreateSafeHousesTable extends Migration
         Schema::create('safe_houses', function (Blueprint $table) {
             $table->id();
             $table->text("safeHouse_address");
-            $table->foreignId("country_id");
+            $table->foreignId("country_id")->constrained();
             $table->string("safeHouse_type");
 
         });

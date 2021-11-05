@@ -48,7 +48,10 @@ class AgentController extends Controller
     public function show($id)
     {
         $agent=Agent::find($id);
-        dd($agent->specialities);
+        foreach ($agent->specialities as $spec){
+            dump($spec->speciality_name);
+        }
+
     }
 
     /**

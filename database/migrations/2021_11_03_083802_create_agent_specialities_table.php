@@ -15,8 +15,9 @@ class CreateAgentSpecialitiesTable extends Migration
     {
         Schema::create('agent_specialities', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid("agent_id")->constrained();
+            $table->foreignId("agent_id")->constrained();
             $table->foreignId("speciality_id")->constrained();
+            $table->timestamps();
         });
     }
 

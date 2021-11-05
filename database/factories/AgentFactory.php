@@ -14,7 +14,7 @@ class AgentFactory extends Factory
     public function definition()
     {
         return [
-            'id'=> $this->faker->uuid(),
+            'agent_immat'=> $this->faker->uuid(),
             'agent_firstname' =>$this->faker->firstName(),
             'agent_lastname' =>$this->faker->lastName(),
             'agent_birthday'=>$this->faker->dateTimeBetween('-80 years','-20 years'),

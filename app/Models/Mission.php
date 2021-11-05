@@ -11,30 +11,19 @@ class Mission extends Model
     use HasFactory;
 
     public function country(){
-        return $this->hasOne(Country::class);
+        return $this->belongsTo(Country::class);
     }
     public function missionType(){
-        return $this->hasMany(MissionType::class);
+        return $this->belongsToMany(MissionType::class, "mission_types");
     }
     public function status(){
         return $this->hasOne(Statuses::class);
     }
 
     public function safeHouse(){
-        return $this->hasMany(SafeHouse::class);
+        return $this->belongsToMany(SafeHouse::class,"safe_houses");
 
     }
 
-    public function target(){
-        return $this->hasMany(Target::class);
-    }
 
-    public function contacts(){
-        return $this->hasMany(Contact::class);
-    }
-
-    public function agent(){
-
-        return $this->hasMany(Agent::class);
-    }
 }

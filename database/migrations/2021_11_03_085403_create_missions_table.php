@@ -17,13 +17,11 @@ class CreateMissionsTable extends Migration
             $table->id();
             $table->string("title");
             $table->string("description");
-            $table->foreignId("country_id");
-            $table->foreignId("missionType_id");
-            $table->foreignId("status_id");
-            $table->foreignId("safeHouses_id");
-            $table->foreignId("target_id");
-            $table->foreignId("contact_id");
-            $table->foreignId("agent_id");
+            $table->foreignId("country_id")->constrained();
+            $table->foreignId("missionTypes_id")->constrained();
+            $table->foreignId("status_id")->constrained();
+
+
 
         });
     }

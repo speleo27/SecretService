@@ -14,7 +14,11 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'contact_firstname' =>$this->faker->firstName(),
+            'contact_lastname' =>$this->faker->lastName(),
+            'contact_birthday'=>$this->faker->dateTimeBetween('-80 years','-20 years'),
+            'nationality_id' =>$this->faker->numberBetween(1,193),
+            'contact_pseudo'=>$this->faker->sentence(2)
         ];
     }
 }

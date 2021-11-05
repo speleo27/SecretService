@@ -11,6 +11,6 @@ class Target extends Model
     use HasFactory;
 
     public function nationality(){
-        return $this->hasOne(Nationality::class);
+        return $this->belongsTo(Nationality::class);
     }
 }

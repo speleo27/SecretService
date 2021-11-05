@@ -18,7 +18,7 @@ class CreateTargetsTable extends Migration
             $table->string("target_firstname");
             $table->string("target_lastname");
             $table->dateTime("target_birthday");
-            $table->foreignId("nationality_id");
+            $table->foreignId("nationality_id")->contrained();
             $table->string("target_pseudo");
 
         });

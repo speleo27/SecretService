@@ -16,7 +16,7 @@ class AgentSpecialitiesFactory extends Factory
     public function definition()
     {
         $speciality=Speciality::select()->inRandomOrder()->first();
-        $agent=Agent::select("id")->inRandomOrder()->first();
+        $agent=Agent::select()->inRandomOrder()->first();
         return [
             "agent_id"=>$agent->id,
             "speciality_id"=>$speciality->id

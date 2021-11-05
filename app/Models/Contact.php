@@ -10,6 +10,6 @@ class Contact extends Model
     public $timestamps=false;
     use HasFactory;
     public function nationality(){
-        return $this->hasOne(Nationality::class);
+        return $this->belongsTo(Nationality::class);
     }
 }
