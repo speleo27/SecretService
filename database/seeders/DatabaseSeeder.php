@@ -467,7 +467,7 @@ class DatabaseSeeder extends Seeder
         DB::table('nationalities')->insert($nationals);
 
         // insert data for table specialities
-        DB::table('Specialities')->delete();
+        DB::table('specialities')->delete();
         $specialities = array(
             array('speciality_name' => 'tireur d\'élite'),
             array('speciality_name' => 'pose de micro'),
@@ -480,19 +480,30 @@ class DatabaseSeeder extends Seeder
             array('speciality_name' => 'interrogatoire'),
             array('speciality_name' => 'piratage'),
         );
-        DB::table('Specialities')->insert($specialities);
+        DB::table('specialities')->insert($specialities);
 
 
         // insert data into table  status
-        DB::table('Specialities')->delete();
+        DB::table('statuses')->delete();
         $status = array(
             array('status_name' => 'En preparation'),
             array('status_name' => 'Attribuée'),
             array('status_name' => 'En cour'),
-            array('speciality_name' => 'Terminée'),
+            array('status_name' => 'Terminée'),
 
         );
-        DB::table('Statuses')->insert($status);
+        DB::table('statuses')->insert($status);
+
+        // insert data into missionTypes table
+        DB::table('mission_types')->delete();
+        $status = array(
+            array('type_name' => 'Assasinat'),
+            array('type_name' => 'Recrutement'),
+            array('type_name' => 'Enlèvement'),
+            array('type_name' => 'Ecoute'),
+
+        );
+        DB::table('mission_types')->insert($status);
 
         \App\Models\User::factory(10)->create();
         \App\Models\Agent::factory(100)->create();
