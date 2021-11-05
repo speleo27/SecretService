@@ -18,4 +18,7 @@ class Agent extends Model
         return $this->belongsToMany(Speciality::class, 'agent_specialities');
 
     }
+    public function missions(){
+        return $this->belongsToMany(Missions::class,'missions');
+    }
 }

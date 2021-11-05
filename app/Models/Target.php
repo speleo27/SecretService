@@ -13,4 +13,7 @@ class Target extends Model
     public function nationality(){
         return $this->belongsTo(Nationality::class);
     }
+    public function missions(){
+        return $this->belongsTo(Missions::class);
+    }
 }

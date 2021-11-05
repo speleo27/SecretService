@@ -20,9 +20,6 @@ class CreateMissionsTable extends Migration
             $table->foreignId("country_id")->constrained();
             $table->foreignId("mission_types_id")->constrained();
             $table->foreignId("status_id")->constrained();
-
-
-
         });
     }
 

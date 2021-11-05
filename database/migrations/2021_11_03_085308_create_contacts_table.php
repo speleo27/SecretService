@@ -20,6 +20,7 @@ class CreateContactsTable extends Migration
             $table->dateTime("contact_birthday");
             $table->foreignId("nationality_id")->constrained();
             $table->string("contact_pseudo");
+            $table->foreignId("missions_id")->constrained();
         });
     }
 
