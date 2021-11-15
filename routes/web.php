@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/agents', [AgentController::class,'index'])->name("agent.index");
-Route::get('/agents/{id}', [AgentController::class,'show']);
+Route::get('/agents/{id}', [AgentController::class,'show'])->name("agent.show");

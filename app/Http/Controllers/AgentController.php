@@ -14,7 +14,7 @@ class AgentController extends Controller
      */
     public function index()
     {
-        $agents=Agent::all();
+        $agents=Agent::paginate(15);
         //dd($agents);
         return view("agent.index",["agents"=>$agents]);
     }
@@ -43,15 +43,19 @@ class AgentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param string $agent_immat
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+   // TODO: find why when request with an uuid the resultat is wrong
+    public function show(string $agent_immat)
     {
-        $agent=Agent::find($id);
-        foreach ($agent->specialities as $spec){
-            dump($spec->speciality_name);
-        }
+
+        $agent=Agent::find($agent_immat);
+        dd($agent);
+        //foreach ($agent->specialities as $spec){
+            //dump($spec->speciality_name);
+            return view("agent.show",["agent"=>$agent]);
+
 
     }
 
