@@ -16,7 +16,7 @@ class AgentController extends Controller
     {
         $agents=Agent::all();
         //dd($agents);
-        return view("agent.index",["agent"=>$agents]);
+        return view("agent.index",["agents"=>$agents]);
     }
 
     /**
