@@ -19,7 +19,7 @@
                     @foreach($agents as $agent)
                     <tr class="text-gray-700">
 
-                        <td class="px-4 py-3 border"><a href="{{route('agent.show', $agent}}">{{$agent->agent_immat}}</a></td>
+                        <td class="px-4 py-3 border">{{$agent->agent_immat}}</td>
                         <td class="px-4 py-3 border">{{$agent->agent_firstname}}</td>
                         <td class="px-4 py-3 border">{{$agent->agent_lastname}}</td>
                         <td class="px-4 py-3 border">{{$agent->agent_birthday}}</td>
