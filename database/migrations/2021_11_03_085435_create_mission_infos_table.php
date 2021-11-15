@@ -15,7 +15,7 @@ class CreateMissionInfosTable extends Migration
     {
         Schema::create('mission_infos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('missions_id')->constrained();
+            $table->foreignId('mission_id')->constrained();
             $table->foreignId('agent_id')->constrained();
             $table->foreignId('contact_id')->constrained();
             $table->foreignId('target_id')->constrained();

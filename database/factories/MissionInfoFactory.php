@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Agent;
+use App\Models\Contact;
 use App\Models\Mission;
+use App\Models\Target;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MissionInfoFactory extends Factory
@@ -15,9 +18,9 @@ class MissionInfoFactory extends Factory
     public function definition()
     {
         $mission=Mission::select()->inRandomOrder()->first();
-        $agent=Mission::select()->inRandomOrder()->first();
-        $contact=Mission::select()->inRandomOrder()->first();
-        $target=Mission::select()->inRandomOrder()->first();
+        $agent=Agent::select()->inRandomOrder()->first();
+        $contact=Contact::select()->inRandomOrder()->first();
+        $target=Target::select()->inRandomOrder()->first();
         return [
             "mission_id"=>$mission,
             "agent_id"=>$agent,

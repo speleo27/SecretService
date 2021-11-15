@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/agents', [AgentController::class,'index']);
+
+Route::get('/agents', [AgentController::class,'index'])->name("agent.index");
 Route::get('/agents/{id}', [AgentController::class,'show']);

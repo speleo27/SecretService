@@ -507,9 +507,10 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory(10)->create();
         \App\Models\Agent::factory(100)->create();
+        \App\Models\Contact::factory(100)->create();
+        \App\Models\Target::factory(100)->create();
         \App\Models\AgentSpecialities::factory(350)->create();
-        \App\Models\MissionInfo::factory(350)->create();
         \App\Models\Mission::factory(350)->create();
-
+        \App\Models\MissionInfo::factory(350)->create();
     }
 }
