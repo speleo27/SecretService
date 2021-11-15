@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section("content")
-    <h1 class="text-center">Liste des agents </h1>
+    <h1 class="text-center font-bold text-dark-600 uppercase">Liste des agents </h1>
 
     <section class="container mx-auto p-6 font-mono">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -8,10 +8,10 @@
                 <table class="w-full" id="agents">
                     <thead>
                     <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                        <th>Matricule</th>
-                        <th>Prénom</th>
-                        <th>Nom</th>
-                        <th>Date de naissance</th>
+                        <th class="text-center">Matricule</th>
+                        <th class="text-center">Prénom</th>
+                        <th class="text-center">Nom</th>
+                        <th class="text-center">Date de naissance</th>
 
                     </tr>
                     </thead>
@@ -19,7 +19,7 @@
                     @foreach($agents as $agent)
                     <tr class="text-gray-700">
 
-                        <td class="px-4 py-3 border">{{$agent->agent_immat}}</td>
+                        <td class="px-4 py-3 border"><a href="{{route('agent.show', $agent}}">{{$agent->agent_immat}}</a></td>
                         <td class="px-4 py-3 border">{{$agent->agent_firstname}}</td>
                         <td class="px-4 py-3 border">{{$agent->agent_lastname}}</td>
                         <td class="px-4 py-3 border">{{$agent->agent_birthday}}</td>
