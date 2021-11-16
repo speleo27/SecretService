@@ -521,6 +521,8 @@ class DatabaseSeeder extends Seeder
         Agent::factory(25)->create();
         Contact::factory(100)->create();
         Target::factory(100)->create();
+
+        //TODO: find how automatise this array
          //insert data into agentspecialities
         DB::table('agent_specialities')->delete();
         $status =array(
@@ -576,8 +578,8 @@ class DatabaseSeeder extends Seeder
             array('agent_id' => 24,'speciality_id'=>3),
             array('agent_id' => 25,'speciality_id'=>1),
         );
-
         DB::table('agent_specialities')->insert($status);
+
         Mission::factory(800)->create();
         MissionInfo::factory(800)->create();
     }

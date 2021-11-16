@@ -6,7 +6,7 @@
     <ul>
         <li>Date de naissance : {{Carbon\Carbon::parse($agent->agent_birthday)->format('d m Y')}}</li>
         <li>Nationalité : {{$agent->nationality->nationality_name}}</li>
-        <ul>Specialitées : @foreach($agent->specialities as $spec)
+        <ul>Spécialitées : @foreach($agent->specialities as $spec)
                                <li>{{$spec->speciality_name}}</li>
                                @endforeach
         </ul>

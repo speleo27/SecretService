@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -13,7 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts= Contact::paginate(15);
+        //dd($contacts);
+        return view("contact.index",["contacts"=>$contacts]);
     }
 
     /**
@@ -45,7 +48,8 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact=Contact::find($id);
+        return view("contact.show",["contact"=>$contact]);
     }
 
     /**
