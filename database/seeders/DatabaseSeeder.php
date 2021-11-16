@@ -2,11 +2,20 @@
 
 namespace Database\Seeders;
 
+use App\Models\Agent;
+use App\Models\AgentSpecialities;
+use App\Models\Contact;
+use App\Models\Mission;
+use App\Models\MissionInfo;
+use App\Models\Target;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
+
+
     /**
      * Seed the application's database.
      *
@@ -265,7 +274,7 @@ class DatabaseSeeder extends Seeder
         DB::table('countries')->insert($countries);
 
         // insert data into table nationalities
-        DB::table('Nationalities')->delete();
+        DB::table('nationalities')->delete();
 
         $nationals = array(
 
@@ -505,12 +514,71 @@ class DatabaseSeeder extends Seeder
         );
         DB::table('mission_types')->insert($status);
 
-        \App\Models\User::factory(10)->create();
-        \App\Models\Agent::factory(50)->create();
-        \App\Models\Contact::factory(100)->create();
-        \App\Models\Target::factory(100)->create();
-        \App\Models\AgentSpecialities::factory(350)->create();
-        \App\Models\Mission::factory(800)->create();
-        \App\Models\MissionInfo::factory(800)->create();
+
+
+
+        User::factory(10)->create();
+        Agent::factory(25)->create();
+        Contact::factory(100)->create();
+        Target::factory(100)->create();
+         //insert data into agentspecialities
+        DB::table('agent_specialities')->delete();
+        $status =array(
+            array('agent_id' => 1,'speciality_id'=>5),
+            array('agent_id' => 1,'speciality_id'=>3),
+            array('agent_id' => 1,'speciality_id'=>10),
+            array('agent_id' => 2,'speciality_id'=>6),
+            array('agent_id' => 2,'speciality_id'=>8),
+            array('agent_id' => 3,'speciality_id'=>4),
+            array('agent_id' => 3,'speciality_id'=>9),
+            array('agent_id' => 4,'speciality_id'=>1),
+            array('agent_id' => 5,'speciality_id'=>8),
+            array('agent_id' => 6,'speciality_id'=>5),
+            array('agent_id' => 6,'speciality_id'=>6),
+            array('agent_id' => 6,'speciality_id'=>7),
+            array('agent_id' => 7,'speciality_id'=>3),
+            array('agent_id' => 7,'speciality_id'=>9),
+            array('agent_id' => 8,'speciality_id'=>10),
+            array('agent_id' => 9,'speciality_id'=>1),
+            array('agent_id' => 10,'speciality_id'=>2),
+            array('agent_id' => 10,'speciality_id'=>5),
+            array('agent_id' => 10,'speciality_id'=>4),
+            array('agent_id' => 11,'speciality_id'=>8),
+            array('agent_id' => 12,'speciality_id'=>6),
+            array('agent_id' => 12,'speciality_id'=>7),
+            array('agent_id' => 13,'speciality_id'=>1),
+            array('agent_id' => 13,'speciality_id'=>4),
+            array('agent_id' => 14,'speciality_id'=>9),
+            array('agent_id' => 14,'speciality_id'=>10),
+            array('agent_id' => 15,'speciality_id'=>5),
+            array('agent_id' => 15,'speciality_id'=>2),
+            array('agent_id' => 15,'speciality_id'=>3),
+            array('agent_id' => 16,'speciality_id'=>1),
+            array('agent_id' => 17,'speciality_id'=>8),
+            array('agent_id' => 17,'speciality_id'=>10),
+            array('agent_id' => 17,'speciality_id'=>3),
+            array('agent_id' => 18,'speciality_id'=>2),
+            array('agent_id' => 18,'speciality_id'=>6),
+            array('agent_id' => 19,'speciality_id'=>9),
+            array('agent_id' => 19,'speciality_id'=>3),
+            array('agent_id' => 20,'speciality_id'=>1),
+            array('agent_id' => 20,'speciality_id'=>3),
+            array('agent_id' => 20,'speciality_id'=>5),
+            array('agent_id' => 21,'speciality_id'=>2),
+            array('agent_id' => 21,'speciality_id'=>4),
+            array('agent_id' => 21,'speciality_id'=>6),
+            array('agent_id' => 22,'speciality_id'=>9),
+            array('agent_id' => 22,'speciality_id'=>10),
+            array('agent_id' => 23,'speciality_id'=>6),
+            array('agent_id' => 23,'speciality_id'=>2),
+            array('agent_id' => 23,'speciality_id'=>5),
+            array('agent_id' => 24,'speciality_id'=>1),
+            array('agent_id' => 24,'speciality_id'=>3),
+            array('agent_id' => 25,'speciality_id'=>1),
+        );
+
+        DB::table('agent_specialities')->insert($status);
+        Mission::factory(800)->create();
+        MissionInfo::factory(800)->create();
     }
 }

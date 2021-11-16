@@ -17,7 +17,7 @@
                     @foreach($agents as $agent)
 
                     <tr class="text-gray-700">
-                        <td class="px-4 py-3 border"><a href="{{route("agent.show",$agent->agent_immat)}}">{{$agent->agent_immat}}</a></td>
+                        <td class="px-4 py-3 border"><a href="{{route("agent.show",$agent->id)}}">{{$agent->agent_immat}}</a></td>
                         <td class="px-4 py-3 border">{{$agent->agent_firstname}}</td>
                         <td class="px-4 py-3 border">{{$agent->agent_lastname}}</td>
                         <td class="px-4 py-3 border">{{Carbon\Carbon::parse($agent->agent_birthday)->format('d m Y')}}</td>

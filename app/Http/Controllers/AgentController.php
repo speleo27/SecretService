@@ -43,15 +43,15 @@ class AgentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param string $agent_immat
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
    // TODO: find why when request with an uuid the resultat is wrong
-    public function show(string $agent_immat)
+    public function show($id)
     {
 
-        $agent=Agent::find($agent_immat);
-        dd($agent);
+        $agent=Agent::find($id);
+        //dd($agent->id);
         //foreach ($agent->specialities as $spec){
             //dump($spec->speciality_name);
             return view("agent.show",["agent"=>$agent]);
