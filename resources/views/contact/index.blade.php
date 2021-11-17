@@ -1,11 +1,13 @@
 @extends('layouts.app')
 @section("content")
 
-    <h1 class="text-center font-bold text-dark-600 uppercase">Liste des agents </h1>
+    <h1 class="text-center font-bold text-dark-600 uppercase">Liste des Contacts </h1>
     <div class="container">
-        <x-Button color= blue,
-                  textColor=white,
-                  title="Ajouter un agent "/>=
+        {{--<x-button color="blue",
+                  href="#",
+                  textColor="white",
+                  title="Ajouter un agent"/>--}}
+        <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter contact</a>
     </div>
     <section class="container mx-auto p-6 font-mono">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -17,6 +19,7 @@
                         <th class="text-center">Prénom</th>
                         <th class="text-center">Nom</th>
                         <th class="text-center">Date de naissance</th>
+                        <th class="text-center">Action</th>
                     </tr>
                     </thead>
                     <tbody class="bg-white">
@@ -24,9 +27,10 @@
 
                         <tr class="text-gray-700">
 
-                            <td class="px-4 py-3 border"><a href="{{route("contact.show",$contact->id)}}">{{$contact->contact_firstname}}</a></td>
-                            <td class="px-4 py-3 border">{{$contact->contact_lastname}}</td>
-                            <td class="px-4 py-3 border">{{Carbon\Carbon::parse($contact->contact_birthday)->format('d m Y')}}</td>
+                            <td class="px-4 py-3 border text-center"><a href="{{route("contact.show",$contact->id)}}">{{$contact->contact_firstname}}</a></td>
+                            <td class="px-4 py-3 border text-center">{{$contact->contact_lastname}}</td>
+                            <td class="px-4 py-3 border text-center">{{Carbon\Carbon::parse($contact->contact_birthday)->format('d m Y')}}</td>
+                            <td class="px-4 py-3 border text-center"><a href="#" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
                         </tr>
                     @endforeach
                     </tbody>

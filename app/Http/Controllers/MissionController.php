@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mission;
 use Illuminate\Http\Request;
 
 class MissionController extends Controller
@@ -13,7 +14,8 @@ class MissionController extends Controller
      */
     public function index()
     {
-        //
+        $missions=Mission::paginate(15);
+        return view("mission.index", ["missions"=>$missions]);
     }
 
     /**
@@ -45,7 +47,8 @@ class MissionController extends Controller
      */
     public function show($id)
     {
-        //
+        $mission=Mission::find($id);
+        return view("mission.show",["mission"=>$mission]);
     }
 
     /**

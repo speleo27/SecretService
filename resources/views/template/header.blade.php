@@ -21,8 +21,8 @@
             </div>
             <div class="flex flex-col text-gray-600 capitalize dark:text-gray-300 lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
                 <a href="{{route("agent.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Agent</a>
-              <a href="{{route("contact.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Contacts</a>
-{{--                <a href="{{route("")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Tarif</a>--}}
+                <a href="{{route("contact.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Contacts</a>
+                <a href="{{route("mission.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Mission</a>
 {{--                <a href="{{route("")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Contact</a>--}}
 
 
