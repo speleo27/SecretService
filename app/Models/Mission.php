@@ -17,7 +17,7 @@ class Mission extends Model
         return $this->belongsToMany(MissionType::class, "mission_types");
     }
     public function status(){
-        return $this->hasOne(Statuses::class);
+        return $this->belongsTo(Status::class);
     }
 
     public function safeHouse(){

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MissionController;
+use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,8 @@ Route::get('/contacts/{id}', [ContactController::class,'show'])->name("contact.s
 
 // route mission
 Route::get('/missions', [MissionController::class,'index'])->name("mission.index");
-Route::get('/missions/{id}', [MissionController::class,'index'])->name("mission.show");
+Route::get('/missions/{id}', [MissionController::class,'show'])->name("mission.show");
+
+// route target
+Route::get('/target', [TargetController::class,'index'])->name("target.index");
+Route::get('/target/{id}', [TargetController::class,'show'])->name("target.show");

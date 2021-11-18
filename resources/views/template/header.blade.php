@@ -23,7 +23,7 @@
                 <a href="{{route("agent.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Agent</a>
                 <a href="{{route("contact.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Contacts</a>
                 <a href="{{route("mission.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Mission</a>
-{{--                <a href="{{route("")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Contact</a>--}}
+                <a href="{{route("target.index")}}" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200">Cibles</a>
 
 
                 {{--                    <div class="relative mt-4 lg:mt-0 lg:mx-4">--}}
