@@ -13,8 +13,8 @@ class Mission extends Model
     public function country(){
         return $this->belongsTo(Country::class);
     }
-    public function missionType(){
-        return $this->belongsTo(MissionType::class);
+    public function type(){
+        return $this->belongsTo(MissionTypes::class);
     }
     public function status(){
         return $this->belongsTo(Status::class);

@@ -15,7 +15,7 @@ class MissionController extends Controller
      */
     public function index()
     {
-        $missions=Mission::paginate(15);
+        $missions=Mission::with('type')->paginate(15);
         return view("mission.index", ["missions"=>$missions]);
     }
 
@@ -43,13 +43,13 @@ class MissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $mission_id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($mission_id)
+    public function show($id)
     {
-        $mission=Mission::find($mission_id)->first();
-        dd($mission->mission_type);
+        $mission=Mission::where("id", $id)->with("type")->get()->first();
+        dd($mission->type);
         return view("mission.show",["mission"=>$mission]);
     }
 

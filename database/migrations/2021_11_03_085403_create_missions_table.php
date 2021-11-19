@@ -18,7 +18,8 @@ class CreateMissionsTable extends Migration
             $table->string("title");
             $table->string("description");
             $table->foreignId("country_id")->constrained();
-            $table->foreignId("mission_type_id")->constrained();
+            $table->unsignedBigInteger("type_id");
+            $table->foreign('type_id')->references('id')->on('mission_types');
             $table->foreignId("status_id")->constrained();
 
 
