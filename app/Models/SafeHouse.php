@@ -15,6 +15,6 @@ class SafeHouse extends Model
 
     }
     public function houseType(){
-        return $this->hasOne(SafeHouseType::class);
+        return $this->hasOne(SafeHouseType::class,"safe_houses_id","safe_houses_type_id");
     }
 }

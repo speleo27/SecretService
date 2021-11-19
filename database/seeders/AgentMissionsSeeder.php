@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class AgentMissionsSeeder extends Seeder
 {
@@ -13,11 +15,12 @@ class AgentMissionsSeeder extends Seeder
      */
     public function run()
     {
+        $faker= Faker::create();
         $data=[];
 
         for($i=0; $i<400;$i++){
-            $data[]=array('mission_id'=>$this->faker->numberBetween(1,200),
-                'agent_id'=>$this->faker->numberBetween(1,25));
+            $data[]=array('mission_id'=>$faker->numberBetween(1,200),
+                'agent_id'=>$faker->numberBetween(1,25));
         }
         DB::table('agents_missions')->delete();
         $status =$data;

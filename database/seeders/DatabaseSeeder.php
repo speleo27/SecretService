@@ -590,9 +590,9 @@ class DatabaseSeeder extends Seeder
         Mission::factory(800)->create();
         SafeHouse::factory(50)->create();
         $this->call([
-                        AgentMissions::class,
-                        TargetMissions::class,
-                        ContactMissions::class,
-                        SafeHouseMissions::class]);
+                        AgentMissionsSeeder::class,
+                        TargetMissionsSeeder::class,
+                        ContactMissionsSeeder::class,
+                        SafeHouseMissionsSeeder::class]);
     }
 }

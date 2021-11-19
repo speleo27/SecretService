@@ -17,11 +17,11 @@ class SafeHouseFactory extends Factory
     {
 
         $country=Country::select()->inRandomOrder()->first();
-        $type=SafeHouseType::select()->inRandomOrder()->first();
+
         return [
             'safeHouse_address' =>$this->faker->streetAddress(),
             'country_id'=>$country,
-            'safe_houses_type_id'=>$type,
+            'type_id'=>$this->faker->numberBetween(1,2),
             'digit'=>$this->faker->numberBetween(1000,9999)
         ];
     }
