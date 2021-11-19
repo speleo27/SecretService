@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Mission;
 use Illuminate\Http\Request;
-
+use App\Models\MissionInfo;
+use App\Models\MissionTypes;
 class MissionController extends Controller
 {
     /**
@@ -42,13 +43,13 @@ class MissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $mission_id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($mission_id)
     {
-        $mission=Mission::find($id);
-        //dd($mission->mission_types->type_name);
+        $mission=Mission::find($mission_id);
+        dd($mission->mission_types->type_name);
         return view("mission.show",["mission"=>$mission]);
     }
 

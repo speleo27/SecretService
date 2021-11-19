@@ -41,12 +41,13 @@ class MissionInfoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MissionInfo  $missionInfo
+     * @param int $mission_id
      * @return \Illuminate\Http\Response
      */
-    public function show(MissionInfo $missionInfo)
+    public function show(int $mission_id)
     {
-        //
+        $info=MissionInfo::find($mission_id);
+        dd($info->agent_name);
     }
 
     /**

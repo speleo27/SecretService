@@ -3,6 +3,7 @@
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MissionController;
+use App\Http\Controllers\MissionInfoController;
 use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\Route;
 
