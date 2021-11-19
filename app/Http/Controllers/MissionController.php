@@ -48,8 +48,8 @@ class MissionController extends Controller
      */
     public function show($mission_id)
     {
-        $mission=Mission::find($mission_id);
-        dd($mission->mission_types->type_name);
+        $mission=Mission::find($mission_id)->first();
+        dd($mission->mission_type);
         return view("mission.show",["mission"=>$mission]);
     }
 
