@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMissionInfosTable extends Migration
+class SafeHousesMissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateMissionInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('mission_infos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('missions_safe_houses', function (Blueprint $table) {
             $table->foreignId('mission_id')->constrained();
-            $table->foreignId('agent_id')->constrained();
-            $table->foreignId('contact_id')->constrained();
-            $table->foreignId('target_id')->constrained();
-            $table->timestamps();
+            $table->foreignId('safe_house_id')->constrained();
         });
     }
 
@@ -30,6 +26,6 @@ class CreateMissionInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mission_infos');
+        Schema::dropIfExists('missions_safe_houses');
     }
 }

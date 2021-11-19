@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSafeHousesTable extends Migration
+class SafeHousesTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateSafeHousesTable extends Migration
      */
     public function up()
     {
-        Schema::create('safe_houses', function (Blueprint $table) {
+        Schema::create('safe_houses_type', function (Blueprint $table){
             $table->id();
-            $table->text("safeHouse_address");
-            $table->foreignId("country_id")->constrained();
-            $table->foreignId("safeHouse_type")->constrained();
-            $table->integer("digit");
-
+            $table->string("safe_house_type");
         });
     }
 
@@ -30,6 +26,6 @@ class CreateSafeHousesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('safe_houses');
+        Schema::dropIfExists('safe_houses_type');
     }
 }

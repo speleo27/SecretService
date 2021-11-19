@@ -7,6 +7,7 @@ use App\Models\AgentSpecialities;
 use App\Models\Contact;
 use App\Models\Mission;
 use App\Models\MissionInfo;
+use App\Models\SafeHouse;
 use App\Models\Target;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -514,6 +515,12 @@ class DatabaseSeeder extends Seeder
         );
         DB::table('mission_types')->insert($status);
 
+        DB::table('safe_houses_type')->delete();
+        $status = array(
+            array('safe_house_type' => 'Sécurisé'),
+            array('safe_house_type' => 'Observation'),
+        );
+        DB::table('safe_houses_type')->insert($status);
 
 
 
@@ -581,6 +588,11 @@ class DatabaseSeeder extends Seeder
         DB::table('agent_specialities')->insert($status);
 
         Mission::factory(800)->create();
-        MissionInfo::factory(800)->create();
+        SafeHouse::factory(50)->create();
+        $this->call([
+                        AgentMissions::class,
+                        TargetMissions::class,
+                        ContactMissions::class,
+                        SafeHouseMissions::class]);
     }
 }

@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SafeHouse extends Model
+class SafeHouseType extends Model
 {
     public $timestamps=false;
     use HasFactory;
-
-    public function country(){
-        return $this->hasOne(Country::class);
-        $this->belongsTo(SafeHouseType::class);
-    }
 }
