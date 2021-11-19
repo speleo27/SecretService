@@ -13,9 +13,9 @@ class SafeHousesTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('safe_houses_type', function (Blueprint $table){
+        Schema::create('safe_houses_types', function (Blueprint $table){
             $table->id();
-            $table->string("safe_house_type");
+            $table->string("safe_house_type_name");
         });
     }
 

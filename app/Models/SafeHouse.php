@@ -12,6 +12,9 @@ class SafeHouse extends Model
 
     public function country(){
         return $this->hasOne(Country::class);
-        $this->belongsTo(SafeHouseType::class);
+
+    }
+    public function houseType(){
+        return $this->hasOne(SafeHouseType::class);
     }
 }

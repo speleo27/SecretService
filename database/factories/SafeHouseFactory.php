@@ -21,7 +21,7 @@ class SafeHouseFactory extends Factory
         return [
             'safeHouse_address' =>$this->faker->streetAddress(),
             'country_id'=>$country,
-            'safeHouse_type'=>$type,
+            'safe_houses_type_id'=>$type,
             'digit'=>$this->faker->numberBetween(1000,9999)
         ];
     }

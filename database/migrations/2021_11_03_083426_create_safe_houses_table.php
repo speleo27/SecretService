@@ -17,7 +17,7 @@ class CreateSafeHousesTable extends Migration
             $table->id();
             $table->text("safeHouse_address");
             $table->foreignId("country_id")->constrained();
-            $table->foreignId("safeHouse_type")->constrained();
+            $table->foreignId("safe_houses_type_id")->constrained();
             $table->integer("digit");
 
         });

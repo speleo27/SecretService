@@ -515,12 +515,12 @@ class DatabaseSeeder extends Seeder
         );
         DB::table('mission_types')->insert($status);
 
-        DB::table('safe_houses_type')->delete();
+        DB::table('safe_houses_types')->delete();
         $status = array(
-            array('safe_house_type' => 'Sécurisé'),
-            array('safe_house_type' => 'Observation'),
+            array('safe_house_type_name' => 'Sécurisé'),
+            array('safe_house_type_name' => 'Observation'),
         );
-        DB::table('safe_houses_type')->insert($status);
+        DB::table('safe_houses_types')->insert($status);
 
 
 
