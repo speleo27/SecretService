@@ -13,6 +13,6 @@ class Contact extends Model
         return $this->belongsTo(Nationality::class);
     }
     public function missions(){
-        return $this->belongsTo(Missions::class);
+        return $this->belongsToMany(Mission::class,"contacts_missions");
     }
 }

@@ -48,16 +48,14 @@ class MissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // TODO find how to fix relation error for method show
     public function show($id)
     {
-        $mission=DB::table("mission")
-                        ->join("contacts_missions","mission_id","=",'contacts_missions.mission_id')
-                        ->join("agents_missions","mission_id","=",'agents_missions.mission_id')
-                        ->join("missions_targets","mission_id","=",'missions_targets.mission_id')
-                        ->join('missions_safe_houses,"mission_id',"=",'missions_safe_houses.mission_id')
-                        ->where("mission_id","=",$id)
-                        ->select("mission.*","agents_missions.agent_id","contacts_missions.contact_id",
-                            "missions_targets.target_id","safe_houses.mission_id")
+        $mission=Mission::with('contact')
+                        ->with("agent")
+                        ->with("target")
+                        ->with("safe_house")
+                        ->where("id","=",$id)
                         ->get();
         dd($mission);
         return view("mission.show",["mission"=>$mission]);

@@ -14,6 +14,6 @@ class Target extends Model
         return $this->belongsTo(Nationality::class);
     }
     public function missions(){
-        return $this->belongsTo(Missions::class);
+        return $this->belongsToMany(Missions::class,'missions_targets');
     }
 }
