@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agent;
+use App\Models\Nationality;
 use Illuminate\Http\Request;
 
 class AgentController extends Controller
@@ -26,7 +27,8 @@ class AgentController extends Controller
      */
     public function create()
     {
-        //
+        $nationality=Nationality::all();
+        return view("agent.create",["nationality"=>$nationality]);
     }
 
     /**

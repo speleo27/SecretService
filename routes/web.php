@@ -24,7 +24,7 @@ Route::get('/', function () {
 // route agent
 Route::get('/agents', [AgentController::class,'index'])->name("agent.index");
 Route::get('/agents/{id}', [AgentController::class,'show'])->name("agent.show");
-
+Route::get('/agents/creation', [AgentController::class, 'create'])->name("agent.create");
 
 //route contact
 Route::get('/contacts', [ContactController::class,'index'])->name("contact.index");

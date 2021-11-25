@@ -2,7 +2,7 @@
 @section("content")
     <h1 class="text-center font-bold text-dark-600 uppercase">Liste des agents </h1>
     <div class="container">
-        <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter agent</a>
+        <a href="{{route("agent.create")}}" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter agent</a>
     </div>
     <section class="container mx-auto p-6 font-mono">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -19,7 +19,6 @@
                     </thead>
                     <tbody class="bg-white">
                     @foreach($agents as $agent)
-
                     <tr class="text-gray-700">
                         <td class="px-4 py-3 border text-center"><a href="{{route("agent.show",$agent->id)}}">{{$agent->agent_immat}}</a></td>
                         <td class="px-4 py-3 border text-center">{{$agent->agent_firstname}}</td>
