@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SafeHouse;
 use Illuminate\Http\Request;
 
 class SafeHouseController extends Controller
@@ -13,7 +14,8 @@ class SafeHouseController extends Controller
      */
     public function index()
     {
-        //
+        $safeHouse =SafeHouse::paginate(15);
+        return view("safe_house.index",["safe_house",$safeHouse]);
     }
 
     /**

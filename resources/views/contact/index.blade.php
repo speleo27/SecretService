@@ -3,10 +3,6 @@
 
     <h1 class="text-center font-bold text-dark-600 uppercase">Liste des Contacts </h1>
     <div class="container">
-        <x-button color="blue"
-                  href="#"
-                  textColor="white"
-                  title="Ajouter un agent"/>
         <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter contact</a>
     </div>
     <section class="container mx-auto p-6 font-mono">

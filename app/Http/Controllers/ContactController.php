@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Nationality;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -26,7 +27,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        $nationality=Nationality::all();
+        return view("contact.create",["nationality"=>$nationality]);
     }
 
     /**

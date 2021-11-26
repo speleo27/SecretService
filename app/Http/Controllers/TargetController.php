@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nationality;
+use App\Models\Target;
 use Illuminate\Http\Request;
 
 class TargetController extends Controller
@@ -13,7 +15,8 @@ class TargetController extends Controller
      */
     public function index()
     {
-        //
+        $targets=Target::paginate(15);
+        return view("target.index",["targets"=>$targets]);
     }
 
     /**
@@ -23,7 +26,8 @@ class TargetController extends Controller
      */
     public function create()
     {
-        //
+        $nationality=Nationality::all();
+        return view("target.create",["nationality"=>$nationality]);
     }
 
     /**
@@ -45,7 +49,8 @@ class TargetController extends Controller
      */
     public function show($id)
     {
-        //
+        $target=Target::find($id);
+        return view("target.show",["target"=>$target]);
     }
 
     /**
