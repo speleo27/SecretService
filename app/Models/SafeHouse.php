@@ -14,10 +14,10 @@ class SafeHouse extends Model
         return $this->hasOne(Country::class);
 
     }
-    public function houseType(){
-        return $this->hasOne(SafeHouseType::class,"safe_houses_id","safe_houses_type_id");
+    public function type(){
+        return $this->belongsTo(SafeHouseType::class);
     }
     public function missions(){
-        return $this->belongsToMany(Mission::class,"mission_id");
+        return $this->belongsToMany(Mission::class);
     }
 }

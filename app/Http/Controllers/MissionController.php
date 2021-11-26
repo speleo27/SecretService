@@ -51,13 +51,9 @@ class MissionController extends Controller
     // TODO find how to fix relation error for method show
     public function show($id)
     {
-        $mission=Mission::with('contact')
-                        ->with("agent")
-                        ->with("target")
-                        ->with("safe_house")
-                        ->where("id","=",$id)
-                        ->get();
-        dd($mission);
+        $mission=Mission::where("id","=",$id)
+                        ->get()->first();
+        //dd($mission->safe_houses);
         return view("mission.show",["mission"=>$mission]);
     }
 

@@ -4,13 +4,34 @@
     <h1 class="text-center">Mission : {{$mission->title}}</h1>
 
     <ul>
-        <li>Description : {{$mission->description}}</li>
-        <li>Pays : {{$mission->country->country_name}}</li>
-        <li>Type de mission : {{$mission->type->type_name}}</li>
-        <li>Agent affecter:{{$mission->agent_mission->agent_immat}}</li>
-        <li>Contact de la mission : {{$mission->contact_mission->contact_pseudo}}</li>
-        <li>Cibles de la mission : {{$mission->mission_target->target_pseudo}}</li>
-        <li>Status de la mission : {{$mission->status->status_name}}</li>
+        <li class="list-disc">Description : {{$mission->description}}</li>
+        <li class="list-disc">Pays : {{$mission->country->country_name}}</li>
+        <li class="list-disc">Type de mission : {{$mission->type->type_name}}</li>
+
+        <li class="list-disc">Agents affectés
+            <ul>
+                @foreach($mission->agents as $agent)
+                        <li><a href="{{route("agent.show",$agent->id)}}">{{$agent->agent_immat}}</a></li>
+                @endforeach
+            </ul>
+        </li>
+        <li class="list-disc">Contact de la mission :<ul>
+        @foreach($mission->contacts as $contact)
+                    <li><a href="{{route("contact.show",$contact->id)}}"> {{$contact->contact_pseudo}}</a></li>
+        @endforeach
+            </ul>
+        </li>
+        <li class="list-disc">Cibles de la mission :<ul>
+        @foreach($mission->targets as $target)
+                    <li><a href="{{route("target.show",$target->id)}}"> {{$target->target_pseudo}}</a></li>
+        @endforeach
+        </ul></li>
+            <li class="list-disc">Status de la mission : {{$mission->status->status_name}}</li>
+        <li class="list-disc">Planques:<ul>
+                @foreach($mission->safehouses as $safeHouse)
+                    <li><a href="{{route("safe_house.show",$safeHouse->id)}}">{{ $safeHouse->safeHouse_address}} {{$safeHouse->country->country_name}}</a></li>
+        @endforeach
+            </ul></li>
     </ul>
 
 @endsection

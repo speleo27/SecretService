@@ -20,10 +20,18 @@ class Mission extends Model
         return $this->belongsTo(Status::class);
     }
 
-    public function safeHouse(){
-        return $this->belongsToMany(SafeHouse::class,"safe_houses");
+    public function safehouses(){
+        return $this->belongsToMany(SafeHouse::class,"missions_safe_houses","mission_id","safe_house_id");
 
     }
-
+    public function contacts(){
+        return $this->belongsToMany(Contact::class,"contacts_missions","mission_id", "contact_id");
+    }
+    public function agents(){
+        return $this->belongsToMany(Agent::class,"agents_missions","mission_id","agent_id");
+    }
+    public function targets(){
+        return $this->belongsToMany(Target::class,"missions_targets","mission_id", "target_id");
+    }
 
 }

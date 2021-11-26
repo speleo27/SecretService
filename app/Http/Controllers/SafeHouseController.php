@@ -47,7 +47,8 @@ class SafeHouseController extends Controller
      */
     public function show($id)
     {
-        //
+        $safeHouse=SafeHouse::with("type")->find($id)->get()->first();
+        return view("safe_house.show",["safeHouse"=>$safeHouse]);
     }
 
     /**

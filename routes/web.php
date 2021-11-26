@@ -4,6 +4,7 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\MissionInfoController;
+use App\Http\Controllers\SafeHouseController;
 use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,6 @@ Route::get('/targets/{id}', [TargetController::class,'show'])->name("target.show
 Route::get('/creation-target', [AgentController::class, 'create'])->name("target.create");
 
 // route safe house
-Route::get('/safe_houses', [TargetController::class,'index'])->name("safe_house.index");
-Route::get('/safe_houses/{id}', [TargetController::class,'show'])->name("safe_house.show");
-Route::get('/creation-safe_house', [AgentController::class, 'create'])->name("safe_house.create");
+Route::get('/safe_houses', [SafeHouseController::class,'index'])->name("safe_house.index");
+Route::get('/safe_houses/{id}', [SafeHouseController::class,'show'])->name("safe_house.show");
+Route::get('/creation-safe_house', [SafeHouseController::class, 'create'])->name("safe_house.create");
