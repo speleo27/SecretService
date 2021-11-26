@@ -10,27 +10,30 @@
 
         <li class="list-disc">Agents affectés
             <ul>
-                @foreach($mission->agents as $agent)
+                @foreach($mission->agents->unique("id") as $agent)
+
                         <li><a href="{{route("agent.show",$agent->id)}}">{{$agent->agent_immat}}</a></li>
                 @endforeach
             </ul>
         </li>
         <li class="list-disc">Contact de la mission :<ul>
-        @foreach($mission->contacts as $contact)
+        @foreach($mission->contacts->unique("id") as $contact)
                     <li><a href="{{route("contact.show",$contact->id)}}"> {{$contact->contact_pseudo}}</a></li>
         @endforeach
             </ul>
         </li>
         <li class="list-disc">Cibles de la mission :<ul>
-        @foreach($mission->targets as $target)
+        @foreach($mission->targets->unique("id") as $target)
                     <li><a href="{{route("target.show",$target->id)}}"> {{$target->target_pseudo}}</a></li>
         @endforeach
         </ul></li>
             <li class="list-disc">Status de la mission : {{$mission->status->status_name}}</li>
         <li class="list-disc">Planques:<ul>
-                @foreach($mission->safehouses as $safeHouse)
+                @forelse($mission->safehouses as $safeHouse)
                     <li><a href="{{route("safe_house.show",$safeHouse->id)}}">{{ $safeHouse->safeHouse_address}} {{$safeHouse->country->country_name}}</a></li>
-        @endforeach
+       @empty
+                    <li> Il n'y a pas de planques pour cette mission</li>
+        @endforelse
             </ul></li>
     </ul>
 

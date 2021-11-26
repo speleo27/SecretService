@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
+    //TODO add date and spec on table
     <h1 class="text-center font-bold text-dark-600 uppercase">Liste des Missions </h1>
     <div class="container">
         <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter une mission</a>

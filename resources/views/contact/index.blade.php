@@ -3,7 +3,7 @@
 
     <h1 class="text-center font-bold text-dark-600 uppercase">Liste des Contacts </h1>
     <div class="container">
-        <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter contact</a>
+        <a href="{{route("contact.create")}}" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter contact</a>
     </div>
     <section class="container mx-auto p-6 font-mono">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">

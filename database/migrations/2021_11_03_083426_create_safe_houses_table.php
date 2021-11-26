@@ -18,7 +18,7 @@ class CreateSafeHousesTable extends Migration
             $table->text("safeHouse_address");
             $table->foreignId("country_id")->constrained();
             $table->unsignedBigInteger("type_id");
-            $table->foreign('type_id')->references('id')->on('safe_houses_types');
+            $table->foreign('type_id')->references('id')->on('safe_house_types');
             $table->integer("digit");
 
         });

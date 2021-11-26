@@ -33,5 +33,8 @@ class Mission extends Model
     public function targets(){
         return $this->belongsToMany(Target::class,"missions_targets","mission_id", "target_id");
     }
+    public function speciality(){
+        return $this->belongsTo(Speciality::class);
+    }
 
 }

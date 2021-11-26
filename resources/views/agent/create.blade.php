@@ -30,8 +30,9 @@
                 <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="relative">
                         <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+
                            @foreach($nationality as $nat)
-                            <option name="nationality" value="{{$nat->nationality->id}}>{{$nat->nationality_name}}</option>
+                            <option name="nationality" value="{{$nat->id}}">{{$nat->nationality_name}}</option>
                            @endforeach
                         </select>
                     </div>
