@@ -16,7 +16,8 @@ class SafeHouseController extends Controller
     public function index()
     {
         $safeHouse =SafeHouse::paginate(15);
-        return view("safe_house.index",["safe_house",$safeHouse]);
+        //dd($safeHouse);
+        return view("safe_house.index",["safeHouse"=>$safeHouse]);
     }
 
     /**

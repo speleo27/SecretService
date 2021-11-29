@@ -39,7 +39,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact= new Contact();
+        $contact->contact_firstname= $request->contact_firstname;
+        $contact->contact_lastname= $request->contact_lastname;
+        $contact->contact_birthday= $request->contact_birthday;
+        $contact->nationality_id= $request->nationality;
+        $contact->contact_pseudo= $request->contact_pseudo;
+        $contact->save();
+        return redirect()->route("contact.index");
+
     }
 
     /**
@@ -85,6 +93,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->delete();
+        return redirect()->route('contact.index');
     }
 }

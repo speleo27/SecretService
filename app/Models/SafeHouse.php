@@ -20,4 +20,5 @@ class SafeHouse extends Model
     public function missions(){
         return $this->belongsToMany(Mission::class);
     }
+
 }

@@ -35,9 +35,9 @@
 
                 </div>
                 <div class="  py-4">
-                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                    <select name="nationality" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                         @foreach($nationality as $nat)
-                            <option name="nationality" value="{{$nat->id}}">{{$nat->nationality_name}}</option>
+                            <option  value="{{$nat->id}}">{{$nat->nationality_name}}</option>
                         @endforeach
                     </select>
                 </div>

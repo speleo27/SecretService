@@ -31,6 +31,9 @@ Route::get('/creation-agent', [AgentController::class, 'create'])->name("agent.c
 Route::get('/contacts', [ContactController::class,'index'])->name("contact.index");
 Route::get('/contacts/{id}', [ContactController::class,'show'])->name("contact.show");
 Route::get('/creation-contacts', [ContactController::class, 'create'])->name("contact.create");
+Route::post('/creation-contacts', [ContactController::class, 'store'])->name("contact.store");
+Route::delete('/supprimer-contact/{id}',[ContactController::class,'destroy'])->name("contact.destroy");
+
 
 // route mission
 Route::get('/missions', [MissionController::class,'index'])->name("mission.index");

@@ -7,7 +7,11 @@ module.exports = {
     ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+        // backgroundImage:{
+        //     'worldMap':"url(./images/worldMap.png)"
+        // }
+    },
   },
   variants: {
     extend: {},
