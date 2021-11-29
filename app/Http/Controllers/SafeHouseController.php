@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\SafeHouse;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,9 @@ class SafeHouseController extends Controller
      */
     public function create()
     {
-        //
+        $country =Country::all();
+        $type= SafeHouse::with("type")->all();
+        return view("safe_house.create",["country"=>$country,"type"=>$type]);
     }
 
     /**

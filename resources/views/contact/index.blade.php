@@ -26,7 +26,7 @@
                             <td class="px-4 py-3 border text-center"><a href="{{route("contact.show",$contact->id)}}">{{$contact->contact_firstname}}</a></td>
                             <td class="px-4 py-3 border text-center">{{$contact->contact_lastname}}</td>
                             <td class="px-4 py-3 border text-center">{{Carbon\Carbon::parse($contact->contact_birthday)->format('d m Y')}}</td>
-                            <td class="px-4 py-3 border text-center"><a href="#" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
+                            <td class="px-4 py-3 border text-center"><a href="#" class="bg-green-600 text-center text-white px-3 py-3 border-solid rounded mr-3">Modifier</a><a href="#" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
                         </tr>
                     @endforeach
                     </tbody>

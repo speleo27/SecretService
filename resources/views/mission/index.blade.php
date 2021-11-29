@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
+{{--TODO:add date and spec on table--}}
 @section("content")
-    //TODO add date and spec on table
+
     <h1 class="text-center font-bold text-dark-600 uppercase">Liste des Missions </h1>
     <div class="container">
         <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter une mission</a>
@@ -17,6 +17,8 @@
                         <th class="text-center">Description</th>
                         <th class="text-center">Type de mission</th>
                         <th class="text-center">Status de la mission</th>
+                        <th class="text-center">Date de début</th>
+                        <th class="text-center">Date de fin</th>
                         <th class="text-center">Action</th>
                     </tr>
                     </thead>
@@ -28,7 +30,9 @@
                             <td class="px-4 py-3 border text-center">{{$mission->description}}</td>
                             <td class="px-4 py-3 border text-center">{{$mission->type->type_name}}</td>
                             <td class="px-4 py-3 border text-center">{{$mission->status->status_name}}</td>
-                            <td class="px-4 py-3 border text-center"><a href="#" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
+                            <td class="px-4 py-3 border text-center">{{$mission->date_de_debut}}</td>
+                            <td class="px-4 py-3 border text-center">{{$mission->date_de_fin}}</td>
+                            <td class="px-4 py-3 border text-center"><a href="#" class="bg-green-600 text-center text-white px-3 py-3 border-solid rounded mr-3">Modifier</a><a href="#" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
                         </tr>
                     @endforeach
                     </tbody>
