@@ -30,7 +30,7 @@
             <li class="list-disc">Status de la mission : {{$mission->status->status_name}}</li>
         <li class="list-disc">Planques:<ul>
                 @forelse($mission->safehouses as $safeHouse)
-                    <li><a href="{{route("safe_house.show",$safeHouse->id)}}">{{ $safeHouse->safeHouse_address}} {{$safeHouse->country->country_name}}</a></li>
+                    <li><a href="{{route("safe_house.show",$safeHouse->id)}}">{{ $safeHouse->safeHouse_address}} {{$safeHouse->safeHouse_city}} {{$safeHouse->country->country_name}}</a></li>
        @empty
                     <li> Il n'y a pas de planques pour cette mission</li>
         @endforelse

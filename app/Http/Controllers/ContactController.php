@@ -70,7 +70,10 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact=Contact::find($id);
+        $nationality=Nationality::all();
+        return view("contact.edit",["contact"=>$contact, "nationality"=>$nationality]);
+
     }
 
     /**
@@ -82,7 +85,12 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact=Contact::find($id);
+        $contact->nationality_id= $request->nationality;
+        $contact->contact_pseudo= $request->contact_pseudo;
+        $contact->save();
+        return redirect()->route("contact.show",$contact->id);
+
     }
 
     /**

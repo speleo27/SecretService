@@ -24,7 +24,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-password">
                             Date de naissance
                         </label>
-                        <input type="date" class="w-full bg-gray-200 border-solid rounded" name="contact-birthday"/>
+                        <input type="date" class="w-full bg-gray-200 border-solid rounded" name="contact_birthday"/>
                     </div>
                     <div class=" text-center">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">

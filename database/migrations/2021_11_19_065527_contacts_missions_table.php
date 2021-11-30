@@ -16,7 +16,7 @@ class ContactsMissionsTable extends Migration
         Schema::create('contacts_missions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mission_id')->constrained();
-            $table->foreignId('contact_id')->constrained();
+            $table->foreignId('contact_id')->constrained()->onDelete("cascade");
         });
     }
 

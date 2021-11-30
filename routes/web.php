@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home");
 // route agent
 Route::get('/agents', [AgentController::class,'index'])->name("agent.index");
 Route::get('/agents/{id}', [AgentController::class,'show'])->name("agent.show");
@@ -33,6 +33,10 @@ Route::get('/contacts/{id}', [ContactController::class,'show'])->name("contact.s
 Route::get('/creation-contacts', [ContactController::class, 'create'])->name("contact.create");
 Route::post('/creation-contacts', [ContactController::class, 'store'])->name("contact.store");
 Route::delete('/supprimer-contact/{id}',[ContactController::class,'destroy'])->name("contact.destroy");
+Route::get('/mettre-a-jour-contact/{id}', [ContactController::class,'edit'])->name("contact.edit");
+Route::patch('/mettre-a-jour-contact/{id}', [ContactController::class,'update'])->name("contact.update");
+
+
 
 
 // route mission
