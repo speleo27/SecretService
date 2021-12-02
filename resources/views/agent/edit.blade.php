@@ -30,9 +30,9 @@
                 </div>
                 <div class=" text-center">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                        Pseudo
+                        Matricule
                     </label>
-                    <input type="text" class="w-full bg-gray-200 border-solid rounded" name="agent_pseudo" value="{{$agent->agent_pseudo}}"/>
+                    <input type="text" class="w-full bg-gray-200 border-solid rounded" name="agent_immat" value="{{$agent->agent_immat}}" disabled/>
                 </div>
 
             </div>
@@ -44,13 +44,23 @@
                     @endforeach
                 </select>
             </div>
-            <div class="  py-4">
-                <select name="speciality" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                    <option value="{{$agent->speciality->speciality_id}}">{{$agent->speciality->speciality_name}}</option>
-                    @foreach($speciality as $spec)
-                        <option  value="{{$spec->id}}">{{$spec->speciality_name}}</option>
-                    @endforeach
-                </select>
+            <div class="block">
+                <span class="text-gray-700">Specialitées:</span>
+                <div class="mt-2">
+                    <div >
+                        <label class="inline-flex items-center">
+                            @foreach($specialities as $spec)
+                                <input type="checkbox" class="form-checkbox " name="speciality[]" value="{{$spec->id}}"
+                                       @if($agent->specialities->contains("id",$spec->id))
+                                       checked
+                                    @endif
+                                />
+
+                                <span class="ml-2 mr-2" >{{$spec->speciality_name}}</span>
+                            @endforeach
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="w-full text-center">
                 <button type="submit" class="btn bg-blue-600 border-solid rounded px-3 py-2 text-white hover:bg-blue-700">Envoyer</button>

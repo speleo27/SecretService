@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agent;
+use App\Models\AgentSpecialities;
 use App\Models\Nationality;
 use App\Models\Speciality;
 use Illuminate\Http\Request;
@@ -31,7 +32,8 @@ class AgentController extends Controller
     {
         $nationality=Nationality::all();
         $specialities=Speciality::all();
-        return view("agent.create",["nationality"=>$nationality, "specialities"=>$specialities]);
+        return view("agent.create",["nationality"=>$nationality,
+            "specialities"=>$specialities]);
     }
 
     /**
@@ -42,7 +44,9 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
-        $speciality= Speciality::find($request->speciality[]);
+
+
+        //dd($request);
         $agent=new Agent();
         $agent->agent_immat= Str::uuid()->toString();
         $agent->agent_firstname= $request->agent_firstname;
@@ -50,7 +54,17 @@ class AgentController extends Controller
         $agent->agent_birthday= $request->agent_birthday;
         $agent->nationality_id= $request->nationality_id;
         $agent->save();
+        //dd($agent);
+        foreach($request->speciality as $speciality){
+             AgentSpecialities::create([
+                "agent_id"=>$agent->id,
+                "speciality_id"=>$speciality
+            ]);
+        }
+
+
         return redirect()->route("agent.index");
+
     }
 
     /**

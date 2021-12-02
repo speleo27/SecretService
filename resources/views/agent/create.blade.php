@@ -37,8 +37,8 @@
                     <div >
                         <label class="inline-flex items-center">
                             @foreach($specialities as $spec)
-                            <input type="checkbox" class="form-checkbox " name="speciality[]" />
-                            <span class="ml-2 mr-2" value="{{$spec->id}}">{{$spec->speciality_name}}</span>
+                            <input type="checkbox" class="form-checkbox " name="speciality[]" value="{{$spec->id}}"/>
+                            <span class="ml-2 mr-2" >{{$spec->speciality_name}}</span>
                             @endforeach
                         </label>
                     </div>
