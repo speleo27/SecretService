@@ -76,14 +76,11 @@ class AgentController extends Controller
    // TODO: find why when request with an uuid the resultat is wrong
     public function show($id)
     {
-
         $agent=Agent::find($id);
         //dd($agent->id);
         //foreach ($agent->specialities as $spec){
             //dump($spec->speciality_name);
             return view("agent.show",["agent"=>$agent]);
-
-
     }
 
     /**
@@ -113,9 +110,22 @@ class AgentController extends Controller
     public function update(Request $request, $id)
     {
         $agent=Agent::find($id);
+        // selected specialities in for selected agent for deleting before updating
+            $speTodelete=$agent->specialities;
+//        foreach ($speTodelete as $spe){
+//            $spe->delete();
+//    }
+        AgentSpecialities::where('agent_id',$agent->id)->delete();
+        //dd($request);
         $agent->nationality_id= $request->nationality_id;
         $agent->save();
-        return redirect()->route("agent.show");
+        foreach($request->speciality as $speciality) {
+            AgentSpecialities::create([
+                "agent_id" => $agent->id,
+                "speciality_id" => $speciality
+            ]);
+        }
+        return redirect()->route("agent.show",$agent->id);
     }
 
     /**

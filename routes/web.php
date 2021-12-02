@@ -29,7 +29,7 @@ Route::get('/creation-agent', [AgentController::class, 'create'])->name("agent.c
 Route::post('/creation-agent', [AgentController::class, 'store'])->name("agent.store");
 Route::delete('/supprimer_agent/{id}',[AgentController::class,'destroy'])->name("agent.destroy");
 Route::get('/mettre-a-jour-agent/{id}',[AgentController::class,"edit"])->name("agent.edit");
-Route::patch('/mettre-a-jour-contact/{id}', [AgentController::class,'update'])->name("agent.update");
+Route::patch('/mettre-a-jour-agent/{id}', [AgentController::class,'update'])->name("agent.update");
 
 //route contact
 Route::get('/contacts', [ContactController::class,'index'])->name("contact.index");
