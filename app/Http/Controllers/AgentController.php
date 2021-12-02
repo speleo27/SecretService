@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agent;
 use App\Models\Nationality;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AgentController extends Controller
 {
@@ -39,7 +40,14 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $agent=new Agent();
+        $agent->agent_immat= Str::uuid()->toString();
+        $agent->agent_firstname= $request->agent_firstname;
+        $agent->agent_lastname= $request->agent_lastname;
+        $agent->agent_birthday= $request->agent_birthday;
+        $agent->nationality_id= $request->nationality_id;
+        $agent->save();
+        return redirect()->route("agent.index");
     }
 
     /**
@@ -69,7 +77,10 @@ class AgentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $agent=Agent::find($id);
+        $nationality=Nationality::all();
+        return view("agent.edit",["agent"=>$agent,"nationality"=>$nationality]);
+
     }
 
     /**
@@ -81,7 +92,10 @@ class AgentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $agent=Agent::find($id);
+        $agent->nationality_id= $request->nationality_id;
+        $agent->save();
+        return redirect()->route("agent.show");
     }
 
     /**
@@ -92,6 +106,8 @@ class AgentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $agent=Agent::find($id);
+        $agent->delete();
+        return redirect()->route("agent.index");
     }
 }

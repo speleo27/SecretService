@@ -15,7 +15,7 @@ class SafeHousesMissionsTable extends Migration
     {
         Schema::create('missions_safe_houses', function (Blueprint $table) {
             $table->foreignId('mission_id')->constrained();
-            $table->foreignId('safe_house_id')->constrained();
+            $table->foreignId('safe_house_id')->constrained()->onDelete("cascade");
         });
     }
 

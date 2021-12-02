@@ -16,7 +16,7 @@ class AgentsMissionsTable extends Migration
         Schema::create('agents_missions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mission_id')->constrained();
-            $table->foreignId('agent_id')->constrained();
+            $table->foreignId('agent_id')->constrained()->onDelete("cascade");
         });
     }
 

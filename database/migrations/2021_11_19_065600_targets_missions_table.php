@@ -15,7 +15,7 @@ class TargetsMissionsTable extends Migration
     {
         Schema::create('missions_targets', function (Blueprint $table) {
             $table->foreignId('mission_id')->constrained();
-            $table->foreignId('target_id')->constrained();
+            $table->foreignId('target_id')->constrained()->onDelete("cascade");
         });
     }
 
