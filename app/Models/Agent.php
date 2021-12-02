@@ -9,6 +9,8 @@ class Agent extends Model
 {
     public $timestamps=false;
     use HasFactory;
+
+
     public function nationality()
     {
         return $this->belongsTo(Nationality::class);
