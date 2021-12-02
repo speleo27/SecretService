@@ -42,6 +42,7 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
+        $speciality= Speciality::find($request->speciality[]);
         $agent=new Agent();
         $agent->agent_immat= Str::uuid()->toString();
         $agent->agent_firstname= $request->agent_firstname;
