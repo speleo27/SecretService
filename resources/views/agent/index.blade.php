@@ -24,7 +24,12 @@
                         <td class="px-4 py-3 border text-center">{{$agent->agent_firstname}}</td>
                         <td class="px-4 py-3 border text-center">{{$agent->agent_lastname}}</td>
                         <td class="px-4 py-3 border text-center">{{Carbon\Carbon::parse($agent->agent_birthday)->format('d m Y')}}</td>
-                        <td class="px-4 py-3 border text-center"><a href="{{route("agent.edit", $agent->id)}}" class="bg-green-600 text-center text-white px-3 py-3 border-solid rounded mr-3">Modifier</a><a href="{{route("agent.destroy",$agent->id)}}" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
+                        <td class="px-4 py-3 border text-center flex flex-row gap-3 justify-center"><a href="{{route("agent.edit", $agent->id)}}" class="bg-green-600 text-center text-white px-3 py-3 border-solid rounded mr-3">Modifier</a>
+                            <form action="{{route("agent.destroy",$agent->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</button>
+                            </form></td>
                     </tr>
                     @endforeach
                     </tbody>

@@ -21,13 +21,13 @@
                     </div>
 
                     <div class=" text-center">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-password">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-birthday">
                             Date de naissance
                         </label>
                         <input type="date" class="w-full bg-gray-200 border-solid rounded" name="contact_birthday"/>
                     </div>
                     <div class=" text-center">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-pseudo">
                             Pseudo
                         </label>
                         <input type="text" class="w-full bg-gray-200 border-solid rounded" name="contact_pseudo"/>

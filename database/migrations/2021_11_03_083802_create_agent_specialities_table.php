@@ -15,7 +15,7 @@ class CreateAgentSpecialitiesTable extends Migration
     {
         Schema::create('agent_specialities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("agent_id")->constrained();
+            $table->foreignId("agent_id")->constrained()->onDelete("cascade");
             $table->foreignId("speciality_id")->constrained();
             $table->timestamps();
         });

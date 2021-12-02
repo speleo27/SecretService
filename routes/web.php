@@ -28,7 +28,7 @@ Route::get('/agents/{id}', [AgentController::class,'show'])->name("agent.show");
 Route::get('/creation-agent', [AgentController::class, 'create'])->name("agent.create");
 Route::post('/creation-agent', [AgentController::class, 'create'])->name("agent.create");
 Route::delete('/supprimer_agent/{id}',[AgentController::class,'destroy'])->name("agent.destroy");
-Route::get('/mettre-a-jour-agent',[AgentController::class,"edit"])->name("agent.edit");
+Route::get('/mettre-a-jour-agent/{id}',[AgentController::class,"edit"])->name("agent.edit");
 Route::patch('/mettre-a-jour-contact/{id}', [AgentController::class,'update'])->name("agent.update");
 
 //route contact

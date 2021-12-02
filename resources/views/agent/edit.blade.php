@@ -44,6 +44,14 @@
                     @endforeach
                 </select>
             </div>
+            <div class="  py-4">
+                <select name="speciality" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                    <option value="{{$agent->speciality->speciality_id}}">{{$agent->speciality->speciality_name}}</option>
+                    @foreach($speciality as $spec)
+                        <option  value="{{$spec->id}}">{{$spec->speciality_name}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="w-full text-center">
                 <button type="submit" class="btn bg-blue-600 border-solid rounded px-3 py-2 text-white hover:bg-blue-700">Envoyer</button>
                 <button class="bg-red-600 border-solid rounded px-3 py-2 text-white hover:bg-red-700" type="reset" id="delete">Annuler</button>

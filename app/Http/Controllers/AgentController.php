@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Agent;
 use App\Models\Nationality;
+use App\Models\Speciality;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -29,7 +30,8 @@ class AgentController extends Controller
     public function create()
     {
         $nationality=Nationality::all();
-        return view("agent.create",["nationality"=>$nationality]);
+        $specialities=Speciality::all();
+        return view("agent.create",["nationality"=>$nationality, "specialities"=>$specialities]);
     }
 
     /**
@@ -79,7 +81,10 @@ class AgentController extends Controller
     {
         $agent=Agent::find($id);
         $nationality=Nationality::all();
-        return view("agent.edit",["agent"=>$agent,"nationality"=>$nationality]);
+        $specialities=Speciality::all();
+
+        //dd($specialities);
+        return view("agent.edit",["agent"=>$agent,"nationality"=>$nationality, "specialities"=>$specialities]);
 
     }
 
