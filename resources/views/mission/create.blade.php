@@ -89,7 +89,7 @@
                 </div>
                 <div class=" py-4 text-center">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-contact">
-                        Contact de la mission
+                        Planque de la mission
                     </label>
                     <select multiple name="safeHouse_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="safeHouses">
                         @foreach($safeHouses as $safeHouse)
