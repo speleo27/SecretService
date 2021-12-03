@@ -8,24 +8,29 @@
         <li class="list-disc">Pays : {{$mission->country->country_name}}</li>
         <li class="list-disc">Type de mission : {{$mission->type->type_name}}</li>
 
-        <li class="list-disc">Agents affectés
+        <li class="list-disc">Agents affectés :
             <ul>
-                @foreach($mission->agents->unique("id") as $agent)
-
+                @forelse($mission->agents->unique("id") as $agent)
                         <li><a href="{{route("agent.show",$agent->id)}}">{{$agent->agent_immat}}</a></li>
-                @endforeach
+                @empty
+                    <li>Il n'y a pas d'agent affectés à cette mission</li>
+                @endforelse
             </ul>
         </li>
         <li class="list-disc">Contact de la mission :<ul>
-        @foreach($mission->contacts->unique("id") as $contact)
-                    <li><a href="{{route("contact.show",$contact->id)}}"> {{$contact->contact_pseudo}}</a></li>
-        @endforeach
+        @forelse($mission->contacts->unique("id") as $contact)
+            <li><a href="{{route("contact.show",$contact->id)}}"> {{$contact->contact_pseudo}}</a></li>
+        @empty
+            <li> Il n'y a pas de contact affectés à cette mission </li>
+        @endforelse
             </ul>
         </li>
         <li class="list-disc">Cibles de la mission :<ul>
-        @foreach($mission->targets->unique("id") as $target)
+        @forelse($mission->targets->unique("id") as $target)
                     <li><a href="{{route("target.show",$target->id)}}"> {{$target->target_pseudo}}</a></li>
-        @endforeach
+        @empty
+            <li>Il n'y a pas de cible affectées à cette mission</li>
+        @endforelse
         </ul></li>
             <li class="list-disc">Status de la mission : {{$mission->status->status_name}}</li>
         <li class="list-disc">Planques:<ul>

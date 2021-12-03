@@ -498,7 +498,7 @@ class DatabaseSeeder extends Seeder
         $status = array(
             array('status_name' => 'En preparation'),
             array('status_name' => 'Attribuée'),
-            array('status_name' => 'En cour'),
+            array('status_name' => 'En cours'),
             array('status_name' => 'Terminée'),
 
         );

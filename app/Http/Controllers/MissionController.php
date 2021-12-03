@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Country;
 use App\Models\Mission;
+use App\Models\Speciality;
+use App\Models\Status;
+use App\Models\Target;
 use Illuminate\Http\Request;
 use App\Models\MissionInfo;
 use App\Models\MissionTypes;
@@ -28,7 +33,15 @@ class MissionController extends Controller
      */
     public function create()
     {
-        //
+        $countries=Country::all();
+        $type=MissionTypes::all();
+        $statuses=Status::all();
+        $specialities=Speciality::all();
+        $targets=Target::all();
+        $contacts=Contact::where()
+        return view("mission.create",["countries"=>$countries,
+            "statuses"=>$statuses,"specialities"=>$specialities,"type"=>$type]);
+
     }
 
     /**
@@ -39,7 +52,18 @@ class MissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        $mission=new Mission();
+        $mission->title=$request->title;
+        $mission->description=$request->description;
+        $mission->country_id=$request->country_id;
+        $mission->type_id=$request->type_id;
+        $mission->status_id=$request->status_id;
+        $mission->speciality_id=$request->speciality_id;
+        $mission->date_de_debut=$request->date_de_debut;
+        $mission->date_de_fin=$request->date_de_fin;
+        $mission->save();
+        return redirect()->route("mission.index");
     }
 
     /**
@@ -65,7 +89,8 @@ class MissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mission=Mission::find($id);
+
     }
 
     /**
@@ -88,6 +113,8 @@ class MissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mission=Mission::find($id);
+        $mission->delete();
+        return redirect()->route('mission.index');
     }
 }

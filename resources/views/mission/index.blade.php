@@ -4,7 +4,7 @@
 
     <h1 class="text-center font-bold text-dark-600 uppercase">Liste des Missions </h1>
     <div class="container">
-        <a href="#" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter une mission</a>
+        <a href="{{route("mission.create")}}" class="bg-blue-600 text-center text-white px-3 py-3 border-solid rounded">Ajouter une mission</a>
     </div>
     <section class="container mx-auto p-6 font-mono">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -32,7 +32,12 @@
                             <td class="px-4 py-3 border text-center">{{$mission->status->status_name}}</td>
                             <td class="px-4 py-3 border text-center">{{$mission->date_de_debut}}</td>
                             <td class="px-4 py-3 border text-center">{{$mission->date_de_fin}}</td>
-                            <td class="px-4 py-3 border text-center"><a href="#" class="bg-green-600 text-center text-white px-3 py-3 border-solid rounded mr-3">Modifier</a><a href="#" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</a></td>
+                            <td class="px-4 py-3 border text-center justify-center flex flex-row gap-3"><a href="#" class="bg-green-600 text-center text-white px-3 py-3 border-solid rounded mr-3">Modifier</a>
+                                <form action="{{route("mission.destroy",$mission->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-600 text-center text-white px-3 py-3 border-solid rounded">Supprimer</button>
+                                </form></td>
                         </tr>
                     @endforeach
                     </tbody>

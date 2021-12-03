@@ -47,6 +47,10 @@ Route::patch('/mettre-a-jour-contact/{id}', [ContactController::class,'update'])
 Route::get('/missions', [MissionController::class,'index'])->name("mission.index");
 Route::get('/missions/{id}', [MissionController::class,'show'])->name("mission.show");
 Route::get('/creation-mission', [MissionController::class, 'create'])->name("mission.create");
+Route::post('/creation-mission', [MissionController::class,'store'])->name('mission.store');
+Route::delete('/supprimer-mission/{id}',[MissionController::class,'destroy'])->name('mission.destroy');
+Route::get('/mettre-a-jour-mission/{id}',[MissionController::class,'edit'])->name('mission.edit');
+Route::patch('/mettre-a-jour-mission/{id}',[MissionController::class,'update'])->name('mission.update');
 
 // route target
 Route::get('/targets', [TargetController::class,'index'])->name("target.index");
