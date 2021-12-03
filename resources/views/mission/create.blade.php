@@ -91,9 +91,9 @@
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-contact">
                         Planque de la mission
                     </label>
-                    <select multiple name="safeHouse_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="safeHouses">
+                    <select  name="safeHouse_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="safeHouse">
                         @foreach($safeHouses as $safeHouse)
-                            <option  value="{{$safeHouse->id}}">{{$safeHouse->safeHouse_adress}} {{$safeHouse->safeHouse_city}}</option>
+                            <option  value="{{$safeHouse->id}}">{{$safeHouse->safeHouse_address}} {{$safeHouse->safeHouse_city}} {{$safeHouse->country->country_name}}</option>
                         @endforeach
                     </select>
                 </div>

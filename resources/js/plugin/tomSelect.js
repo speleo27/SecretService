@@ -26,3 +26,30 @@ var configContact={
     onItemAdd:()=>{},
     onItemRemove:()=>{},
 }
+const agents= document.querySelector("#agent");
+var tsAgent= new TomSelect("#agent", configAgent);
+
+var configAgent={
+    plugins:['remove_button'],
+    render:{},
+    sortField: {
+        field: 'text',
+        direction: 'asc'
+    },
+    onItemAdd:()=>{},
+    onItemRemove:()=>{},
+}
+
+const safeHouses=document.querySelector("#safeHouse");
+var tsSafehouse= new TomSelect("#safehouse", configSafehouse);
+
+var configSafehouse={
+    plugins:['remove_button'],
+    render:{},
+    sortField: {
+        field: 'text',
+        direction: 'asc'
+    },
+    onItemAdd:()=>{},
+    onItemRemove:()=>{},
+}

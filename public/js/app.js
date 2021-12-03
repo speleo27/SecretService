@@ -2132,6 +2132,30 @@ var configContact = {
   onItemAdd: function onItemAdd() {},
   onItemRemove: function onItemRemove() {}
 };
+var agents = document.querySelector("#agent");
+var tsAgent = new (tom_select__WEBPACK_IMPORTED_MODULE_0___default())("#agent", configAgent);
+var configAgent = {
+  plugins: ['remove_button'],
+  render: {},
+  sortField: {
+    field: 'text',
+    direction: 'asc'
+  },
+  onItemAdd: function onItemAdd() {},
+  onItemRemove: function onItemRemove() {}
+};
+var safeHouses = document.querySelector("#safeHouse");
+var tsSafehouse = new (tom_select__WEBPACK_IMPORTED_MODULE_0___default())("#safehouse", configSafehouse);
+var configSafehouse = {
+  plugins: ['remove_button'],
+  render: {},
+  sortField: {
+    field: 'text',
+    direction: 'asc'
+  },
+  onItemAdd: function onItemAdd() {},
+  onItemRemove: function onItemRemove() {}
+};
 
 /***/ }),
 
