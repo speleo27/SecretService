@@ -27,6 +27,7 @@ class MissionFactory extends Factory
         return [
             "title"=> $this->faker->sentence(4),
             "description"=>$this->faker->text(50),
+            "mission_pseudo"=>$this->faker->sentence(2),
             "country_id"=>$country,
             "type_id"=>$missionType,
             "status_id"=>$status,

@@ -507,7 +507,7 @@ class DatabaseSeeder extends Seeder
         // insert data into missionTypes table
         DB::table('mission_types')->delete();
         $status = array(
-            array('type_name' => 'Assasinat'),
+            array('type_name' => 'Assassinat'),
             array('type_name' => 'Recrutement'),
             array('type_name' => 'Enlèvement'),
             array('type_name' => 'Ecoute'),

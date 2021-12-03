@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agent;
 use App\Models\Contact;
 use App\Models\Country;
 use App\Models\Mission;
+use App\Models\SafeHouse;
 use App\Models\Speciality;
 use App\Models\Status;
 use App\Models\Target;
@@ -38,9 +40,10 @@ class MissionController extends Controller
         $statuses=Status::all();
         $specialities=Speciality::all();
         $targets=Target::all();
-        $contacts=Contact::where()
-        return view("mission.create",["countries"=>$countries,
-            "statuses"=>$statuses,"specialities"=>$specialities,"type"=>$type]);
+        $contacts=Contact::all();
+        $agents=Agent::all();
+        $safeHouses=SafeHouse::all();
+        return view("mission.create",compact("countries","type","statuses","specialities","targets","contacts","agents","safeHouses"));
 
     }
 
@@ -56,6 +59,8 @@ class MissionController extends Controller
         $mission=new Mission();
         $mission->title=$request->title;
         $mission->description=$request->description;
+        $mission->mission_pseudo=$request->mission_pseudo;
+
         $mission->country_id=$request->country_id;
         $mission->type_id=$request->type_id;
         $mission->status_id=$request->status_id;
@@ -63,6 +68,9 @@ class MissionController extends Controller
         $mission->date_de_debut=$request->date_de_debut;
         $mission->date_de_fin=$request->date_de_fin;
         $mission->save();
+        foreach($request->targets as $target){
+
+        }
         return redirect()->route("mission.index");
     }
 

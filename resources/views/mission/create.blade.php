@@ -6,16 +6,36 @@
             @csrf
             <div class="grid grid-cols-2 gap-6">
                 <div class="text-center">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-title">
+                    <label class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-title">
                         Titre
                     </label>
-                    <input type="text" class="w-full bg-gray-200 border-solid rounded" name="title"/>
+                    <input type="text" class="py-3 w-full bg-gray-200 border-solid rounded" name="title"/>
                 </div>
                 <div class="text-center">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-description">
                         Description
                     </label>
                     <textarea  class="w-full bg-gray-200 border-solid rounded" name="description"></textarea>
+                </div>
+                <div class=" py-4 text-center">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-target">
+                        Cible de la mission
+                    </label>
+                    <select multiple name="target_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="target">
+                        @foreach($targets as $target)
+                            <option value="{{$target->id}}">{{$target->target_firstname}} {{$target->target_lastname}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class=" py-4 text-center">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-contact">
+                        Contact de la mission
+                    </label>
+                    <select multiple name="contact_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="contact">
+                        @foreach($contacts as $contact)
+                            <option  value="{{$contact->id}}">{{$contact->contact_firstname}} {{$contact->contact_lastname}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class=" py-4 text-center">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-country">
@@ -47,7 +67,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="text-center py-4">
+                <div class="text-center ">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-speciality">
                         Spécialité nécessaire pour la mission
                     </label>
@@ -57,17 +77,37 @@
                         @endforeach
                     </select>
                 </div>
+                <div class=" py-4 text-center">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-contact">
+                        Agent de la mission
+                    </label>
+                    <select multiple name="agent_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="agent">
+                        @foreach($agents as $agent)
+                            <option  value="{{$agent->id}}">{{$agent->agent_firstname}} {{$agent->agent_lastname}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class=" py-4 text-center">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-contact">
+                        Contact de la mission
+                    </label>
+                    <select multiple name="safeHouse_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="safeHouses">
+                        @foreach($safeHouses as $safeHouse)
+                            <option  value="{{$safeHouse->id}}">{{$safeHouse->safeHouse_adress}} {{$safeHouse->safeHouse_city}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="text-center">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-date_de_debut">
                         Date de début de mission
                     </label>
-                    <input type="date" class="w-full bg-gray-200 border-solid rounded" name="date_de_debut"/>
+                    <input type="date" class="py-3 w-full bg-gray-200 border-solid rounded" name="date_de_debut"/>
                 </div>
                 <div class="text-center">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-date_de_fin">
                         Date de fin de mission
                     </label>
-                    <input type="date" class="w-full bg-gray-200 border-solid rounded" name="date_de_fin"/>
+                    <input type="date" class="py-3 w-full bg-gray-200 border-solid rounded" name="date_de_fin"/>
                 </div>
             </div>
             <div class="w-full text-center mt-3">
@@ -76,9 +116,8 @@
             </div>
         </form>
     </div>
-
-
 @endsection
+
 
 
 

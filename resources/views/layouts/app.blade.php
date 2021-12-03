@@ -12,7 +12,9 @@
         <div class="container mx-auto">
             @yield("content")
         </div>
+
     <script>
+
         const hamburger = document.getElementById('ham');
         const men= document.getElementById('menu')
         hamburger.addEventListener("click", ()=>{
@@ -21,6 +23,7 @@
             hamburger.classList.toggle("rotate90");
         })
         </script>
+    <script src="{{asset("js/app.js")}}"></script>
     </body>
 </html
 <!-- ... --->
